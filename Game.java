@@ -1,7 +1,6 @@
 /*		Game class
  * 		Piles hold the ints of the cards, top ones at the front
  * 		Suits hold the ints of the cards, higher ones at the front
- * 
  */
 
 import java.util.*;
@@ -38,8 +37,16 @@ public class Game {
 	}
 
 	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
 		while(!checkWin()){
 			printBoard();
+			System.out.println("Enter the number of the pile you want to pull from");
+			int pileFrom = input.nextInt();
+			System.out.println("Enter how many cards you would like to take off the pile");
+			int depth = input.nextInt();
+			System.out.println("Enter the number of the pile you want to put the cards in");
+			int pileTo = input.nextInt();
+			moveCard(pileFrom, pileTo, depth);
 		}
 	}
 
